@@ -1,5 +1,5 @@
 {
-    "name": "ShaymaaSaied/Order-Split",
+    "name": "magearab/ordersplit",
     "description": "MageArab OrderSplit",
     "require": {
       "php": "~5.6.0|7.0.2|~7.0.6|~8.1.0",
