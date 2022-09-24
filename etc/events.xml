@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+  ~ /**
+  ~  * Copyright (C) Shaymaa Saied, All Rights Reserved
+  ~  * Last Modified 24/09/2022, 00:07
+  ~  */
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_save_after">
+        <observer name="magearab_ordersplit" instance="MageArab\OrderSplit\Observer\OrderSaveAfter"/>
+    </event>
+</config>
