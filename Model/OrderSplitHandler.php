@@ -65,6 +65,9 @@ class OrderSplitHandler implements OrderSplitHandlerInterface
         $quoteId = $order->getQuoteId();
         /** @var Quote $currentQuote */
         $currentQuote = $this->_cartRepository->get($quoteId);
+        if(count($currentQuote->getAllVisibleItems())<=1){
+            return false;
+        }
         $attributeItemsList = $this->generateSplitAttributeList($currentQuote);
 
         if(!$attributeItemsList || empty($attributeItemsList)){

@@ -49,3 +49,6 @@ php bin/magento c:f
 3. Select the attribute that module will split the orders based on it
 
 ![Alt text](images/configuration.PNG?raw=true "Split Order Configuration Setting")
+
+![Alt text](images/orders.PNG?raw=true "Sales Orders Grid")
+
