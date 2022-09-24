@@ -4225,6 +4225,22 @@
       <change afterPath="$PROJECT_DIR$/../WishlistApi/app/code/MageArab/WishlistApi/etc/module.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../WishlistApi/app/code/MageArab/WishlistApi/etc/webapi.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../WishlistApi/app/code/MageArab/WishlistApi/registration.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/Api/OrderSplitHandlerInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/Api/QuoteHandlerInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/Helper/Data.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/Model/Config/Source/SplitAttribute.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/Model/OrderSplitHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/Model/QuoteHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/Observer/OrderSaveAfter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/Setup/InstallData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/Ui/Component/Listing/Column/ParentIncrement.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/etc/adminhtml/system.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/etc/di.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/etc/events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/etc/module.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/registration.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blackbox/app/code/MageArab/OrderSplit/view/adminhtml/ui_component/sales_order_grid.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../culture-new/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../culture-new/.idea/deployment.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../culture-new/.idea/modules.xml" afterDir="false" />
@@ -11383,6 +11399,10 @@
       <change afterPath="$PROJECT_DIR$/../saif-new/app/code/Amasty/SocialLoginAppleId/i18n/en_US.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../saif-new/app/code/Amasty/SocialLoginAppleId/registration.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../saif-new/aws.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Api/OrderSplitHandlerInterface.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Api/QuoteHandlerInterface.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Helper/Data.php" afterDir="false" />
@@ -11469,6 +11489,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -11484,7 +11505,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663980977426</updated>
-      <workItem from="1663980978503" duration="1889000" />
+      <workItem from="1663980978503" duration="2590000" />
     </task>
     <servers />
   </component>

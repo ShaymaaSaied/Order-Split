@@ -55,6 +55,7 @@ class InstallData implements InstallDataInterface
                         'type' =>'int',
                         'visible' => false,
                         'required' => false,
+                        'grid' => true
                     ]
                 );
                 $salesSetup->addAttribute('order', 'parent_increment',

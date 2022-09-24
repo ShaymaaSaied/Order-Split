@@ -81,6 +81,7 @@ class QuoteHandler implements QuoteHandlerInterface
         if (!$customer->getId() && $currentQuote->getCustomerIsGuest()){
             $isCustomerQuote = false;
         }
+
         if($isCustomerQuote){
             $this->createCustomerCart($customer->getId());
             $this->_quote->setStoreId($currentQuote->getStoreId())
@@ -102,7 +103,7 @@ class QuoteHandler implements QuoteHandlerInterface
         }
 
         $this->_quote->getBillingAddress()->setData($this->generateAddress($currentQuote->getBillingAddress()->getData()));
-        $this->_quote->getShippingAddress()->setData($this->generateAddress($currentQuote->getShippingAddress->getData()));
+        $this->_quote->getShippingAddress()->setData($this->generateAddress($currentQuote->getShippingAddress()->getData()));
         $this->collectTotals($quotesCount, $currentQuote,$items);
         $this->setPaymentMethod($currentQuote);
         $this->saveQuote();
@@ -113,16 +114,16 @@ class QuoteHandler implements QuoteHandlerInterface
      *
     */
     private function createEmptyGuestCart() {
-        $this->_quote =   $this->_guestCart->createEmptyCart();
-        return $this->_quote;
+        return   $this->_guestCart->createEmptyCart();
     }
 
     /** Create Customer Cart
      * @param int $customerId
     */
     private function createCustomerCart($customerId){
-        $this->_quote = $this->_cartManagement->createEmptyCartForCustomer($customerId);
-        return $this->_quote;
+        if($this->_cartManagement->createEmptyCartForCustomer($customerId)){
+            $this->_quote= $this->_cartManagement->getCartForCustomer($customerId);
+        } ;
     }
 
     /** Add Product to cart
@@ -226,17 +227,18 @@ class QuoteHandler implements QuoteHandlerInterface
         $quoteBaseGrandTotal=0.0;
         /** @var Item $item */
         foreach ($quoteItems as $item){
-            $quoteDiscount+=$item->getDiscountAmount();
-            $quoteBaseDiscount+=$item->getBaseDiscountAmount();
-            $quoteTaxes+=$item->getTaxAmount();
-            $quoteBaseTaxes+=$item->getBaseTaxAmount();
-            $quoteSubtotal+=$item->getRowTotal();
-            $quoteBaseSubtotal+=$item->getBaseRowTotal();
+            $quoteDiscount+=(float)$item->getDiscountAmount();
+            $quoteBaseDiscount+=(float)$item->getBaseDiscountAmount();
+            $quoteTaxes+=(float)$item->getTaxAmount();
+            $quoteBaseTaxes+=(float)$item->getBaseTaxAmount();
+            $quoteSubtotal+=(float)$item->getPrice()*$item->getQty();
+            $quoteBaseSubtotal+=(float)$item->getBasePrice()*$item->getQty();
         }
 
         $quoteShipping= $this->calculateShipping($quotesCount);
         $quoteGrandTotal=   ($quoteTaxes+$quoteShipping+$quoteSubtotal)-$quoteDiscount;
         $quoteBaseGrandTotal= ($quoteBaseTaxes+$quoteBaseSubtotal+$quoteShipping)-$quoteBaseDiscount;
+
 
         /** @var \Magento\Quote\Model\Quote\Address $address $*/
         foreach ($this->_quote->getAllAddresses() as $address){
@@ -245,12 +247,13 @@ class QuoteHandler implements QuoteHandlerInterface
                     ->setShippingAmount($quoteShipping)
                     ->setShippingDescription($currentQuote->getShippingAddress()->getShippingDescription())
                     ->setShippingMethod($currentQuote->getShippingAddress()->getShippingMethod())
-                    ->setDiscountAmount($quoteDiscount)
-                    ->setBaseDiscountAmount($quoteBaseDiscount)
+                    ->setDiscountAmount(-$quoteDiscount)
+                    ->setBaseDiscountAmount(-$quoteBaseDiscount)
                     ->setDiscountDescription($currentQuote->getShippingAddress()->getDiscountDescription())
                     ->setSubtotal($quoteSubtotal)
                     ->setBaseSubtotal($quoteBaseSubtotal)
                     ->setGrandTotal($quoteGrandTotal)
+                    ->setBaseSubtotalTotalInclTax((float)$quoteBaseTaxes+(float)$quoteBaseSubtotal)
                     ->setBaseGrandTotal($quoteBaseGrandTotal);
 
         }

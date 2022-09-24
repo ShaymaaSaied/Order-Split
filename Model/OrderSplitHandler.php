@@ -66,7 +66,7 @@ class OrderSplitHandler implements OrderSplitHandlerInterface
         /** @var Quote $currentQuote */
         $currentQuote = $this->_cartRepository->get($quoteId);
         $attributeItemsList = $this->generateSplitAttributeList($currentQuote);
-        var_dump($attributeItemsList);
+
         if(!$attributeItemsList || empty($attributeItemsList)){
             return false;
         }
@@ -101,7 +101,6 @@ class OrderSplitHandler implements OrderSplitHandlerInterface
             /** @var Product $product */
             $product = $this->_productFactory->create()->load($item->getProduct()->getId()) ;
             $attributeValue = $product->getAttributeText($splitAttributeCode);
-            var_dump($attributeValue,$splitAttributeCode);
             if($attributeValue){
                 $attributeList[$attributeValue][] = $item;
             }

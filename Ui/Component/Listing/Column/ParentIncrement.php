@@ -51,9 +51,9 @@ class ParentIncrement extends Column
     {
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as & $item) {
-                if (isset($item['parent_id'])) {
+                if (isset($item['parent_id'])&& $item['parent_id']>0) {
                     $url = $this->_urlBuilder->getUrl('sales/order/view', ['order_id' => $item['parent_id']]);
-                    $link = '<a href="' . $url . '"">' . $item['parent_increment'] . '</a>';
+                    $link = '<a target="_blank" href="' . $url . '"">#' . $item['parent_increment'] . '</a>';
                     $item['parent_increment'] = $link;
                 }
             }

@@ -11,12 +11,12 @@
         <arguments>
             <argument name="columns" xsi:type="array">
                 <item name="parent_increment" xsi:type="string">sales_order.parent_increment</item>
+                <item name="parent_id" xsi:type="string">sales_order.parent_id</item>
             </argument>
         </arguments>
     </virtualType>
 
     <preference for="MageArab\OrderSplit\Api\OrderSplitHandlerInterface" type="MageArab\OrderSplit\Model\OrderSplitHandler" />
     <preference for="MageArab\OrderSplit\Api\QuoteHandlerInterface" type="MageArab\OrderSplit\Model\QuoteHandler" />
-
 
 </config>
