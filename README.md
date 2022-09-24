@@ -47,4 +47,5 @@ php bin/magento c:f
 1. Go to **STORES** > **Configuration** > **MageArab** > **Order Split**.
 2. Select **Enabled** option to enable the module.
 3. Select the attribute that module will split the orders based on it
-![Alt text](/images/configuration?raw=true "Split Order Configuration Setting")
+
+![Alt text](images/configuration.PNG?raw=true "Split Order Configuration Setting")
